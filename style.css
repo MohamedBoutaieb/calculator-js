@@ -46,6 +46,7 @@ button {
     order: 10;
     border-radius: 8%;
     background-color: burlywood;
+    transition:0.6s
 }
 .equals{
     background:rgb(213, 62, 62);
@@ -55,4 +56,11 @@ button {
 }
 .c{
     background:blue
+}
+button:hover {
+    background:coral;
+    transform: scale(1.1);
+}
+button:active {
+    transform: scale(0.9);
 }
