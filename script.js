@@ -56,13 +56,12 @@ function evaluateExpression(str) {
         }
 
     }
-    
+
     // if the result is Nan then something was wrong with the input
     console.log(parseInt(terms[0]))
-    if (parseInt(terms[0])!=0 && !parseInt(terms[0]))
-        {
-            return 'Error!';
-        }
+    if (parseInt(terms[0]) != 0 && !parseInt(terms[0])) {
+        return 'Error!';
+    }
     //choose whether to display the result as int or float according to its value
     if (parseFloat(terms[0]).toFixed(3) == parseInt(terms[0])) {
         return parseInt(terms[0]);
@@ -111,7 +110,11 @@ function buttonClick(event) {
         }
         // disabling the 
         else {
-            input.value += event.target.innerText
+            if (event.target.innerText == '0' && input.value[input.value.length - 1] == '0' && input.value.length == 1) { }
+            else {
+                input.value += event.target.innerText
+            }
+
             // using the dot one time per operand
             if (event.target.innerText == '.') {
                 event.target.disabled = true
@@ -125,17 +128,17 @@ buttons.forEach(btn => btn.addEventListener('click', buttonClick))
 
 // some optimisations for the keyboard mode (automatic spaces are added before and after operators) 
 // (getting the result by enter or = button
-input.addEventListener('keypress', (e)=>{
+input.addEventListener('keypress', (e) => {
 
     if (operators.includes(e.key))
-        input.value +=" "
-    if(e.key == '=' || e.key == "Enter"){
-        input.value =evaluateExpression(input.value)
+        input.value += " "
+    if (e.key == '=' || e.key == "Enter") {
+        input.value = evaluateExpression(input.value)
     }
 }
 )
-input.addEventListener('keyup', (e)=>{
+input.addEventListener('keyup', (e) => {
     if (operators.includes(e.key))
-        input.value +=" "
+        input.value += " "
 }
 )
