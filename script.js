@@ -56,6 +56,7 @@ function evaluateExpression(str) {
         }
 
     }
+    
     // if the result is Nan then something was wrong with the input
     console.log(parseInt(terms[0]))
     if (parseInt(terms[0])!=0 && !parseInt(terms[0]))
@@ -66,7 +67,7 @@ function evaluateExpression(str) {
     if (parseFloat(terms[0]).toFixed(3) == parseInt(terms[0])) {
         return parseInt(terms[0]);
     }
-    dot.disabled = true;
+    dot.disabled = false;
     console.log('xxxxxxxxxx')
     return parseFloat(terms[0]).toFixed(3);
 
