@@ -93,6 +93,7 @@ function buttonClick(event) {
     }
     else if (event.target.innerText == "Clear") {
         input.value = ""
+        dot.disabled = false
     }
     // making the operation happen
     else if (event.target.innerText == "=") {
