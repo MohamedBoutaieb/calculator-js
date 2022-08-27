@@ -1,11 +1,12 @@
 body {
     align-items: center;
+    height:95vh;
 }
 
 .calculator {
     margin: auto;
     width: 750px;
-    height: 900px;
+    height: 100%;
     text-align: center;
     background: grey;
     border-radius: 10px;
@@ -14,7 +15,7 @@ body {
 
 input {
     margin-top: 10px;
-    width: 700px;
+    width: 80%;
     height: 70px;
     font-size: 40px;
     border-radius: 10px;
@@ -22,7 +23,7 @@ input {
 }
 
 .btns {
-    margin-top: 10%;
+    margin-top: 5%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
